@@ -1,5 +1,5 @@
 #pragma once
-#include <Windows.h>
+#include <windows.h>
 #include <winternl.h>
 
 using FNProcessIterationFunc = void(*)(void* pProcessInformation, void* pParameter);

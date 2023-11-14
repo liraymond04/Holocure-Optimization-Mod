@@ -1,5 +1,5 @@
 #pragma once
-#include <Windows.h>
+#include <windows.h>
 #include "../../SDK/FwdDecls/FwdDecls.hpp"
 #include "../../SDK/Enums/Enums.hpp"
 

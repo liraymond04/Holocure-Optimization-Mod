@@ -3,8 +3,9 @@
 #define MICROSECONDS 1000
 #define NANOSECONDS	1
 #include "DllMain.hpp"	// Include our header
-#include <Windows.h>    // Include Windows's mess.
+#include <windows.h>    // Include Windows's mess.
 #include <vector>       // Include the STL vector.
+#include <math.h>
 #include <unordered_set>
 #include <unordered_map>
 #include <queue>
@@ -2211,8 +2212,8 @@ YYTKStatus CodeCallback(YYTKCodeEvent* pCodeEvent, void* OptionalArgument)
 		}
 		else if (_strcmpi(Code->i_pName, "gml_Object_obj_Player_Step_0") == 0)
 		{
-			auto Player_Step_0 = [pCodeEvent](YYTKCodeEvent* pCodeEvent, CInstance* Self, CInstance* Other, CCode* Code, RValue* Res, int Flags) {
-				pCodeEvent->Call(Self, Other, Code, Res, Flags);
+			auto Player_Step_0 = [pCodeEvent](YYTKCodeEvent* pe, CInstance* Self, CInstance* Other, CCode* Code, RValue* Res, int Flags) {
+				pe->Call(Self, Other, Code, Res, Flags);
 				if (PickupRangePotentialUpdate)
 				{
 					YYRValue Result;

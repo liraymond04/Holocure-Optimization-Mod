@@ -76,8 +76,6 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;OPTIMIZATION_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>Use</PrecompiledHeader>
-      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -93,8 +91,6 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;OPTIMIZATION_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -110,8 +106,6 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;OPTIMIZATION_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>Use</PrecompiledHeader>
-      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -127,8 +121,6 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;OPTIMIZATION_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
@@ -148,14 +140,6 @@
     <ClInclude Include="Features\PluginManager\Structures\PmStructures.hpp" />
     <ClInclude Include="Features\UnitTests\UnitTests.hpp" />
     <ClInclude Include="framework.h" />
-    <ClInclude Include="MH\buffer.h" />
-    <ClInclude Include="MH\hde\hde32.h" />
-    <ClInclude Include="MH\hde\hde64.h" />
-    <ClInclude Include="MH\hde\pstdint.h" />
-    <ClInclude Include="MH\hde\table32.h" />
-    <ClInclude Include="MH\hde\table64.h" />
-    <ClInclude Include="MH\MinHook.h" />
-    <ClInclude Include="MH\trampoline.h" />
     <ClInclude Include="SDK\Enums\Enums.hpp" />
     <ClInclude Include="SDK\FwdDecls\FwdDecls.hpp" />
     <ClInclude Include="SDK\Plugins\API Definitions\APIDefs.hpp" />

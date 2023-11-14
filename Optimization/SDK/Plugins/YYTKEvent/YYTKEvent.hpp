@@ -7,7 +7,7 @@
 #include "../../FwdDecls/FwdDecls.hpp"
 #include <d3d9.h>
 #include <d3d11.h>
-#include <Windows.h>
+#include <windows.h>
 #include <string>
 #include <tuple>
 

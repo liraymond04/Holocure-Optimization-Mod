@@ -1,5 +1,5 @@
 #include "APIDefs.hpp"
-#include <TlHelp32.h>
+#include <tlhelp32.h>
 
 HMODULE GetYYTKModule()
 {

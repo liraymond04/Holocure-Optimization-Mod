@@ -46,7 +46,7 @@ enum YYTKStatus : int
 	YYTK_NOT_FOUND = 6,			// The value wasn't found.
 };
 
-enum EventType : unsigned __int64
+enum EventType : unsigned long long
 {
 	EVT_CODE_EXECUTE = (1 << 0),					// The event represents a Code_Execute() call.
 	EVT_YYERROR = (1 << 1),							// The event represents a YYError() call.

@@ -2,7 +2,7 @@
 #include "../../SDK/Structures/Documented/YYRValue/YYRValue.hpp"
 #include "../../SDK/FwdDecls/FwdDecls.hpp"
 #include "Logging.hpp"
-#include <Windows.h>
+#include <windows.h>
 
 namespace Utils::Logging
 {
