@@ -21,24 +21,22 @@ jobs:
       run: |
         ./build.sh
 
+    - name: Get DLL version number
+      run: |
+        VERSION=$(./get_dll_version.sh)
+
+    - name: Get DLL file path
+      run: |
+        DLL_PATH=$(./get_dll.sh)
+
     - name: Create Release
       id: create_release
-      uses: actions/create-release@v1
+      uses: softprops/action-gh-release@v1
+      if: startsWith(github.ref, 'refs/tags/')
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: v${{ github.run_number }}
-        release_name: Release ${{ github.run_number }}
-        body: |
-          Changes in this release:
-          - Added Optimization.dll
-
-    - name: Upload DLL to Release
-      uses: actions/upload-release-asset@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./build/Optimization.dll
-        asset_name: Optimization.dll
-        asset_content_type: application/octet-stream
+        tag_name: v${{ $VERSION }}
+        release_name: v${{ $VERSION }}
+        files: $DLL_PATH
+        body_path: CHANGELOG.md

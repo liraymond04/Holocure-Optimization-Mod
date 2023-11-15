@@ -8,7 +8,11 @@ if (MINGW32)
     SET(CMAKE_CXX_COMPILER x86_64-w64-mingw32-g++)
 endif()
 
-project(Optimization C CXX)
+project(Optimization
+    VERSION ${PROJECT_VERSION}
+    LANGUAGES C CXX)
+
+message("Project version: ${PROJECT_VERSION}")
 
 ################################################################################
 # Set target arch type if empty. Visual studio solution generator provides it.
