@@ -35,7 +35,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: v$VERSION
-        release_name: v$VERSION
-        files: $DLL_PATH
+        tag_name: v${{ env.VERSION }}
+        name: v${{ env.VERSION }}
+        files: ${{ env.DLL_PATH }}
         body_path: CHANGELOG.md
