@@ -2,6 +2,12 @@ cmake_minimum_required(VERSION 3.16.0 FATAL_ERROR)
 
 set(CMAKE_SYSTEM_VERSION 10.0 CACHE STRING "" FORCE)
 
+if (MINGW32)
+    set(CMAKE_SYSTEM_NAME Windows)
+    SET(CMAKE_C_COMPILER x86_64-w64-mingw32-gcc)
+    SET(CMAKE_CXX_COMPILER x86_64-w64-mingw32-g++)
+endif()
+
 project(Optimization C CXX)
 
 ################################################################################
