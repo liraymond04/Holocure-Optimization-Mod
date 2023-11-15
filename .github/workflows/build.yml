@@ -23,11 +23,11 @@ jobs:
 
     - name: Get DLL version number
       run: |
-        echo "VERSION=$(./get_dll_version.sh)" >> $GITHUB_ENV
+        echo "VERSION=$(./get_dll_version.sh './build')" >> $GITHUB_ENV
 
     - name: Get DLL file path
       run: |
-        echo "DLL_PATH=$(./get_dll.sh)" >> $GITHUB_ENV
+        echo "DLL_PATH=$(./get_dll.sh './build')" >> $GITHUB_ENV
 
     - name: Create Release
       id: create_release
