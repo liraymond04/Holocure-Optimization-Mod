@@ -17,11 +17,11 @@ RUN apt-get update && \
 RUN service winbind start
 
 # Install CMake
-RUN wget https://github.com/Kitware/CMake/releases/download/v3.28.0-rc5/cmake-3.28.0-rc5.tar.gz
+WORKDIR /usr
 
-RUN tar zxvf cmake-3.28.0-rc5.tar.gz && \
-    cd cmake-3.28.0-rc5 && ./bootstrap && \
-    make && make install
+RUN wget https://github.com/Kitware/CMake/releases/download/v3.28.0-rc5/cmake-3.28.0-rc5-linux-x86_64.tar.gz
+
+RUN tar --strip-components=1 -xzf cmake-3.28.0-rc5-linux-x86_64.tar.gz
 
 # Initialize the wine environment. Wait until the wineserver process has
 # exited before closing the session, to avoid corrupting the wine prefix.
