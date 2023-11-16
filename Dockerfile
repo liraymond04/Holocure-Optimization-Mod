@@ -24,6 +24,9 @@ RUN pacman -Syu --noconfirm && \
     wine
 
 # Clone and install MSVC wine compiler
+RUN wine64 wineboot --init && \
+    while pgrep wineserver > /dev/null; do sleep 1; done
+
 WORKDIR /msvc
 
 RUN git clone https://github.com/mstorsjo/msvc-wine.git
@@ -32,11 +35,6 @@ WORKDIR msvc-wine
 
 RUN echo yes | ./vsdownload.py --dest ../cc && \
     ./install.sh ../cc
-
-RUN WINEPREFIX=/root/.wine64 winecfg
-
-RUN WINEPREFIX=/root/.wine64 wineserver -p
-RUN WINEPREFIX=/root/.wine64 wine64 wineboot
 
 # Copy and build project
 WORKDIR /app
