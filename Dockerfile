@@ -60,7 +60,7 @@ RUN CC=cl CXX=cl cmake .. \
     -DPROJECT_VERSION=$VERSION \
     && make
 
-RUN mv ../x64/Release/src.dll ../x64/Release/$DLL_NAME-v$VERSION.dll
+RUN mv ../x64/Release/Optimization.dll ../x64/Release/$DLL_NAME-v$VERSION.dll
 
 
 # Copy output DLL to host machine
